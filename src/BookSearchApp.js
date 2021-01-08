@@ -85,7 +85,7 @@ class BookSearchApp extends Component{
           <SearchInputText 
             searchTerm={this.state.searchTerm}
             handleUpdate={term=>this.updateSearchTerm(term)}
-            sendRequest={()=>this.sendRequest}
+            sendRequest={this.sendRequest}
           />
           <PrintType 
           books={this.state.books}

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
 class SearchInputText extends Component{
+    constructor(props)
+    {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
     handleSubmit(e){
         e.preventDefault();
+        console.log("Ckicked!")
         this.props.sendrequest();
     };
 
@@ -10,7 +16,7 @@ class SearchInputText extends Component{
         return(
             <div>
                 <h1>Google API book search</h1>
-                <form>
+                <form action="#" onSubmit={this.props.sendrequest}>
                 <input
                     placeholder="Search term"
                     value={this.props.searchTerm}
